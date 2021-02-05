@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2 style="text-align: center">Login page</h2><hr>
+    {% for i in messages %}
+        <p style="text-align: center;color: red">{{ i }}</p>
+    {% endfor %}<hr>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <lable>Username</lable><input type="text" name="username" required>
+        <lable>Password</lable><input type="password" name="password" required>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

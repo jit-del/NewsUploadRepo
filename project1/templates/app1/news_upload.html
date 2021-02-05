@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>News Upload</title>
+</head>
+<body>
+    <h2 style="text-align: center">News Upload Here</h2><hr>
+    {% for i in messages %}
+        <p style="text-align: center;color: green">{{ i }}</p>
+    {% endfor %}<hr>
+<form method="post" action="{% url 'news_upload' %}">
+{% csrf_token %}
+    <label>Title</label><input type="text" name="title" required><br>
+    <label>Content</label><textarea name="content"></textarea><br>
+    <label>Image Url</label><input type="text" name="image_url" required><br>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

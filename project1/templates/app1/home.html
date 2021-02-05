@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Home page</title>
+</head>
+<body>
+    <h2 style="text-align: center">Home page</h2><hr>
+    {% for i in data %}
+        {{ i.name }}
+    {% endfor %}
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'news_show' %}">News Show</a></li>
+        <li><a href="{% url 'news_upload' %}">News Upload</a></li>
+    </ul>
+</body>
+</html>
